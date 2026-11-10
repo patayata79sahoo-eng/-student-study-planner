@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>EduPlan Student Study Planner</display-name>
+    <description>
+        Modern Student Study Planner built with Java Servlets, Apache Tomcat, HTML5, CSS3,
+        and persistent Java file handling. Zero JavaScript.
+    </description>
+
+    <!-- Application Lifecycle Listener -->
+    <listener>
+        <listener-class>com.studyplanner.servlet.AppContextListener</listener-class>
+    </listener>
+
+    <!-- Dashboard Servlet -->
+    <servlet>
+        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-class>com.studyplanner.servlet.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DashboardServlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <!-- Tasks Servlet -->
+    <servlet>
+        <servlet-name>TaskServlet</servlet-name>
+        <servlet-class>com.studyplanner.servlet.TaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskServlet</servlet-name>
+        <url-pattern>/tasks</url-pattern>
+    </servlet-mapping>
+
+    <!-- Subjects Servlet -->
+    <servlet>
+        <servlet-name>SubjectServlet</servlet-name>
+        <servlet-class>com.studyplanner.servlet.SubjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubjectServlet</servlet-name>
+        <url-pattern>/subjects</url-pattern>
+    </servlet-mapping>
+
+    <!-- Timetable Servlet -->
+    <servlet>
+        <servlet-name>TimetableServlet</servlet-name>
+        <servlet-class>com.studyplanner.servlet.TimetableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TimetableServlet</servlet-name>
+        <url-pattern>/timetable</url-pattern>
+    </servlet-mapping>
+
+    <!-- Progress Analytics Servlet -->
+    <servlet>
+        <servlet-name>ProgressServlet</servlet-name>
+        <servlet-class>com.studyplanner.servlet.ProgressServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProgressServlet</servlet-name>
+        <url-pattern>/progress</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome File pointing to root / dashboard -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- Session configuration -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+
+</web-app>
+
